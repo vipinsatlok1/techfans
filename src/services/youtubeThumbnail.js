@@ -10,7 +10,7 @@ const youtubeThumbnailDownload = async (req, res) => {
 
     console.log(url)
     // set destination where save image
-    const dest = path.join(__dirname, "..", "..", "images", "example.jpg")
+    const dest = path.join(__dirname, "..", "..", "tmp", "example.jpg")
     console.log(dest)
 
     await download.image({ url, dest })
