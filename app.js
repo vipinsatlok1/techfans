@@ -19,7 +19,7 @@ app.use(cookieParser())
 
 // uses session
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: process.env.SESSION_SECRET || "satsahebji",
     resave: false,
     saveUninitialized: true
 }));
@@ -35,10 +35,10 @@ app.post("/thumbnail", async (req, res) => {
 
 // render page
 const pages = require("./src/routes/pages")
-const auth = require("./src/routes/auth")
+// const auth = require("./src/routes/auth")
 const services = require("./src/routes/services")
 app.use("/", pages)
-app.use("/auth", auth)
+// app.use("/auth", auth)
 app.use("/services", services)
 
 

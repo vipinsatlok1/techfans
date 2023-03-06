@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -26,10 +26,11 @@
     "express-session": "^1.17.3",
     "image-downloader": "^4.3.0",
     "jsonwebtoken": "^9.0.0",
-    "nodemon": "^2.0.21",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
-    "youtube-thumbnail-downloader": "^1.0.1",
     "youtube-thumbnail-grabber": "^1.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }
