@@ -9,11 +9,12 @@ const path = require("path")
 //     secretAccessKey: 'fnDttvD1i5dh4VGh8KjSexGJTFc3rVohFvM4f1tM'
 // });
 
-const fs = require('@cyclic.sh/s3fs')("cyclic-agreeable-blue-peplum-ap-south-1", {
-    accessKeyId: 'ASIAZH3CGN34Q3X7DAIR',
-    secretAccessKey: 'fnDttvD1i5dh4VGh8KjSexGJTFc3rVohFvM4f1tM'
-})
+// const fs = require('@cyclic.sh/s3fs')("cyclic-agreeable-blue-peplum-ap-south-1", {
+//     accessKeyId: 'ASIAZH3CGN34Q3X7DAIR',
+//     secretAccessKey: 'fnDttvD1i5dh4VGh8KjSexGJTFc3rVohFvM4f1tM'
+// })
 
+const fs = require('@cyclic.sh/s3fs') 
 // { createWriteStream }
 
 // export AWS_REGION="ap-south-1"
