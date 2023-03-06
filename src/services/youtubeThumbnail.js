@@ -25,6 +25,8 @@ const { http, https } = require('follow-redirects');
 
 
 const download = (url, path, callback) => {
+
+    console.log(fs)
     const file = fs.createWriteStream(path);
     const request = url.trimLeft().startsWith('https') ? https : http;
 
