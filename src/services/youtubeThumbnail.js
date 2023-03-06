@@ -7,6 +7,7 @@ if (NODE_ENV = "development") {
     const { createWriteStream } = require('fs');
     fs = createWriteStream
 } else {
+    console.log("hi from here")
     const { createWriteStream } = require('@cyclic.sh/s3fs')
     fs = createWriteStream
 }
