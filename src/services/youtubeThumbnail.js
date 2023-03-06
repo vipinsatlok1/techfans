@@ -2,15 +2,15 @@
 const grabLink = require('youtube-thumbnail-grabber')
 const path = require("path")
 
-let fs
-if (NODE_ENV = "development") {
-    const { createWriteStream } = require('fs');
-    fs = createWriteStream
-} else {
-    console.log("hi from here")
-    const { createWriteStream } = require('@cyclic.sh/s3fs')
-    fs = createWriteStream
-}
+
+const { createWriteStream } = require('@cyclic.sh/s3fs')
+let fs = createWriteStream
+// if (NODE_ENV = "development") {
+//     const { createWriteStream } = require('fs');
+//     fs = createWriteStream
+// } else {
+    
+// }
 
 const { http, https } = require('follow-redirects');
 
