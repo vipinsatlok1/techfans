@@ -8,7 +8,7 @@ const youtubeThumbnailDownload = async (req, res) => {
     const url = grabLink(req.body.url, 'max')
 
     // set destination where save image
-    const dest = path.resolve(__dirname, "../../images/example.jpg")
+    const dest = path.join(__dirname, "..", "..", "images", "example.jpg")
     console.log(dest)
     await download.image({ url, dest })
     res.download(dest, "download.jpg")
