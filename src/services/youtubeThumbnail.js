@@ -14,7 +14,7 @@ const path = require("path")
 //     secretAccessKey: 'fnDttvD1i5dh4VGh8KjSexGJTFc3rVohFvM4f1tM'
 // })
 
-const fs = require('@cyclic.sh/s3fs') 
+const fs = require('@cyclic.sh/s3fs')
 // { createWriteStream }
 
 // export AWS_REGION="ap-south-1"
@@ -27,7 +27,7 @@ const { http, https } = require('follow-redirects');
 
 const download = (url, path, callback) => {
 
-    console.log(fs)
+    console.log(require('@cyclic.sh/s3fs'))
     const file = fs.createWriteStream(path);
     const request = url.trimLeft().startsWith('https') ? https : http;
 
