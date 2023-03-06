@@ -6,7 +6,16 @@ const port = process.env.PORT || 5000
 // const session = require("express-session")
 // const cookieParser = require('cookie-parser');
 // const multer = require('multer')
-const { youtubeThumbnailDownload } = require("techfans-tools")
+const { youtubeThumbnailDownload, consoleLog } = require("techfans-tools")
+
+const grabLink = require('youtube-thumbnail-grabber')
+const fs = require("fs")
+const download = require("image-downloader")
+
+
+
+
+
 
 app.set('view engine', 'ejs');
 
@@ -22,14 +31,17 @@ app.set('view engine', 'ejs');
 // })
 
 // app.use(express.json())
-app.use(express.urlencoded({extended : false}))
+app.use(express.urlencoded({ extended: false }))
 
 
 app.post("/thumbnail", async (req, res) => {
-    console.log(req.body)
-    await youtubeThumbnailDownload(req.body.url, "example.jpg")
-    res.send("ok").download("example.jpg")
-})
+    const url = grabLink(req.body.url, 'max')
+    const dest = __dirname + "/example.jpg"
+
+    const image = await download.image({ url, dest })
+    res.download(dest, "download.jpg")
+});
+
 
 // const upload = multer({ storage: storage })
 
@@ -58,6 +70,10 @@ app.post("/thumbnail", async (req, res) => {
 
 app.get('/', (req, res) => {
     res.render('pages/home', { title: 'Home' });
+});
+
+app.get('/thumbnail', (req, res) => {
+    res.render('pages/downlaod', { title: 'Home' });
 });
 
 
